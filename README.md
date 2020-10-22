@@ -1,24 +1,25 @@
-# Project name here
-> Summary description here.
+# colab_everything
+> Python library to run streamlit, flask, fastapi, etc on google colab.
 
-
-This file will become your README and also the index of your documentation.
 
 ## Install
 
-`pip install your_project_name`
+`pip install colab_everything`
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
+**Note:** Make sure you have `Streamlit` installed before running the below code.
+
+You can use `pip` to install `Streamlit`
 
 ```
-1+1
+pip install streamlit
 ```
 
+```python
+from colab_everything import ColabStreamlit
+ColabStreamlit('hello') # streamlit app path
+```
 
-
-
-    2
-
+    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
 
