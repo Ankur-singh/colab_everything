@@ -25,7 +25,7 @@ class ColabStreamlit():
 
     def run_app(self, debug=False):
         os.system(f"fuser -n tcp -k {self.port}")
-        cmd = f'streamlit {self.path} --server.port {self.port}'
+        cmd = f'streamlit run {self.path} --server.port {self.port}'
         with subprocess.Popen(
             [cmd],
             shell=True,
