@@ -31,24 +31,21 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install colab_everything</code></p>
+<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2><p><code>pip install colab-everything</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2><p><strong>Note:</strong> Make sure you have <code>Streamlit</code> installed before running the below code.</p>
-<p>You can use <code>pip</code> to install <code>Streamlit</code></p>
+<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2><p><strong>Note:</strong> The library is only responsible for port tunneling. So, you will have setup everything required to run your web app. For example; installing all the dependecies, setting up all the environment varibles, etc.</p>
 
-<pre><code>pip install streamlit</code></pre>
-
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Streamlit-app">Streamlit app<a class="anchor-link" href="#Streamlit-app"> </a></h4>
 </div>
 </div>
 </div>
@@ -60,7 +57,7 @@ nb_path: "index.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">colab_everything</span> <span class="kn">import</span> <span class="n">ColabStreamlit</span>
-<span class="n">ColabStreamlit</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span> <span class="c1"># streamlit app path</span>
+<span class="n">ColabStreamlit</span><span class="p">(</span><span class="s1">&#39;app.py&#39;</span><span class="p">)</span> <span class="c1"># streamlit app path</span>
 </pre></div>
 
     </div>
@@ -84,6 +81,165 @@ nb_path: "index.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Flask-app">Flask app<a class="anchor-link" href="#Flask-app"> </a></h4>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">colab_everything</span> <span class="kn">import</span> <span class="n">ColabFlask</span>
+<span class="n">ColabFlask</span><span class="p">(</span><span class="s1">&#39;app.py&#39;</span><span class="p">)</span> <span class="c1"># Flask app path</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="FastAPI-app">FastAPI app<a class="anchor-link" href="#FastAPI-app"> </a></h4><p><strong>Note:</strong> FastAPI uses <code>uvicorn</code>, so the syntax is a bit different. You will have to pass only the file name (without extention). For example, pass <code>main</code> if your app is <code>main.py</code>.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">colab_everything</span> <span class="kn">import</span> <span class="n">ColabFastapi</span>
+<span class="n">ColabFastapi</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span> <span class="c1"># FastAPI app file name</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Any-other-Custom-app-or-command">Any other Custom app or command<a class="anchor-link" href="#Any-other-Custom-app-or-command"> </a></h4><p>You can use <a href="/colab_everything/core.html#ColabCustom"><code>ColabCustom</code></a> to easily run an other app or command.</p>
+<p>To be very honest, you will never have to use <code>http.server</code> because colab already provides a file explorer. The example below is just for demonstration purposes.</p>
+<p><strong>Note:</strong> The default port is 9999. If you are using any other port then you will have specify it twice; in the command and also in the argument.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">colab_everything</span> <span class="kn">import</span> <span class="n">ColabCustom</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;python -m http.server 9999&#39;</span>
+<span class="n">ColabCustom</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">colab_everything</span> <span class="kn">import</span> <span class="n">ColabCustom</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;python -m http.server 10000&#39;</span>
+<span class="n">ColabCustom</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I am actively looking for feedbacks and contributions. Feel free to contact me at <em>as.ankursingh3.1@gmail.com</em>.</p>
+
+</div>
+</div>
+</div>
 </div>
  
 

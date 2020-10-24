@@ -4,22 +4,70 @@
 
 ## Install
 
-`pip install colab_everything`
+`pip install colab-everything`
 
 ## How to use
 
-**Note:** Make sure you have `Streamlit` installed before running the below code.
+**Note:** The library is only responsible for port tunneling. So, you will have setup everything required to run your web app. For example; installing all the dependecies, setting up all the environment varibles, etc.
 
-You can use `pip` to install `Streamlit`
-
-```
-pip install streamlit
-```
+#### Streamlit app
 
 ```python
 from colab_everything import ColabStreamlit
-ColabStreamlit('hello') # streamlit app path
+ColabStreamlit('app.py') # streamlit app path
 ```
 
     Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
 
+
+#### Flask app
+
+```python
+from colab_everything import ColabFlask
+ColabFlask('app.py') # Flask app path
+```
+
+    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+
+
+#### FastAPI app
+
+**Note:** FastAPI uses `uvicorn`, so the syntax is a bit different. You will have to pass only the file name (without extention). For example, pass `main` if your app is `main.py`.
+
+```python
+from colab_everything import ColabFastapi
+ColabFastapi('app') # FastAPI app file name
+```
+
+    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+
+
+#### Any other Custom app or command
+
+You can use `ColabCustom` to easily run an other app or command.
+
+To be very honest, you will never have to use `http.server` because colab already provides a file explorer. The example below is just for demonstration purposes.
+
+**Note:** The default port is 9999. If you are using any other port then you will have specify it twice; in the command and also in the argument.
+
+```python
+## Using default port
+from colab_everything import ColabCustom
+cmd = 'python -m http.server 9999'
+ColabCustom(cmd)
+```
+
+    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+
+
+```python
+## Using non-default port
+from colab_everything import ColabCustom
+cmd = 'python -m http.server 10000'
+ColabCustom(cmd, port=10000)
+```
+
+    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
+
+
+I am actively looking for feedbacks and contributions. Feel free to contact me at *as.ankursingh3.1@gmail.com*.

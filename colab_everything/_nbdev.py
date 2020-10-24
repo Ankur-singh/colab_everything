@@ -2,7 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"ColabStreamlit": "00_core.ipynb"}
+index = {"ColabBase": "00_core.ipynb",
+         "ColabStreamlit": "00_core.ipynb",
+         "ColabFlask": "00_core.ipynb",
+         "ColabFastapi": "00_core.ipynb",
+         "ColabCustom": "00_core.ipynb"}
 
 modules = ["core.py"]
 
