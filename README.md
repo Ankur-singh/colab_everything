@@ -17,18 +17,12 @@ from colab_everything import ColabStreamlit
 ColabStreamlit('app.py') # streamlit app path
 ```
 
-    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
-
-
 #### Flask app
 
 ```python
 from colab_everything import ColabFlask
 ColabFlask('app.py') # Flask app path
 ```
-
-    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
-
 
 #### FastAPI app
 
@@ -38,9 +32,6 @@ ColabFlask('app.py') # Flask app path
 from colab_everything import ColabFastapi
 ColabFastapi('app') # FastAPI app file name
 ```
-
-    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
-
 
 #### Any other Custom app or command
 
@@ -57,17 +48,11 @@ cmd = 'python -m http.server 9999'
 ColabCustom(cmd)
 ```
 
-    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
-
-
 ```python
 ## Using non-default port
 from colab_everything import ColabCustom
 cmd = 'python -m http.server 10000'
 ColabCustom(cmd, port=10000)
 ```
-
-    Streamlit app can be accessed on: https://27b3dd7d3f04.ngrok.io
-
 
 I am actively looking for feedbacks and contributions. Feel free to contact me at *as.ankursingh3.1@gmail.com*.
