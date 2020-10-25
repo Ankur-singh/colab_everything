@@ -38,6 +38,18 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2><p>We cannot access the localhost on Google Colab, as we do on our local machine because Google Colab provides a VM(virtual machine). Hence, we will have to expose it to a public URL to access it. We can use <a href="https://ngrok.com/">ngrok</a>. <strong>Ngrok</strong> exposes local servers behind NATs and firewalls to the public internet over secure tunnels.</p>
+<p>This library hides away all the complexity and provides you simple interface to run your webapps on colab. The library can be used in the following scenario:</p>
+<ul>
+<li>To test your web app before deploying it into production. </li>
+<li>To share the app with peers, friends, and clients; so that they can use/test your app and provide feedbacks.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2><p><strong>Note:</strong> The library is only responsible for port tunneling. So, you will have setup everything required to run your web app. For example; installing all the dependecies, setting up all the environment varibles, etc.</p>
 
 </div>

@@ -6,6 +6,14 @@
 
 `pip install colab-everything`
 
+## Introduction
+
+We cannot access the localhost on Google Colab, as we do on our local machine because Google Colab provides a VM(virtual machine). Hence, we will have to expose it to a public URL to access it. We can use [ngrok](https://ngrok.com/). **Ngrok** exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+
+This library hides away all the complexity and provides you simple interface to run your webapps on colab. The library can be used in the following scenario:
+- To test your web app before deploying it into production. 
+- To share the app with peers, friends, and clients; so that they can use/test your app and provide feedbacks.
+
 ## How to use
 
 **Note:** The library is only responsible for port tunneling. So, you will have setup everything required to run your web app. For example; installing all the dependecies, setting up all the environment varibles, etc.
