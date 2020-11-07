@@ -18,7 +18,7 @@ class ColabBase():
         for tunnel in active_tunnels:
             public_url = tunnel.public_url
             ngrok.disconnect(public_url)
-        url = ngrok.connect(port=self.port, **{"bind_tls": True}, return_ngrok_tunnel=True)
+        url = ngrok.connect(addr=self.port, options={"bind_tls": True}, return_ngrok_tunnel=True)
         print(f'Web App can be accessed on: {url.public_url}')
 
 # Cell
