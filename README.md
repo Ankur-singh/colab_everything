@@ -1,10 +1,15 @@
 # colab_everything
+
 > Python library to run streamlit, flask, fastapi, etc on google colab.
+
+[![Downloads](https://pepy.tech/badge/colab-everything)](https://pepy.tech/project/colab-everything)
 
 
 ## Install
 
 `pip install colab-everything`
+
+
 
 ## Introduction
 
@@ -64,3 +69,7 @@ ColabCustom(cmd, port=10000)
 ```
 
 I am actively looking for feedbacks and contributions. Feel free to contact me at *as.ankursingh3.1@gmail.com*.
+
+### Credits
+
+This is inspired by Abhishek Thakur's work [ColabCode](https://github.com/abhishekkrthakur/colabcode). This library could not have been possible without his work. You should surely checkout ColabCode as well.
