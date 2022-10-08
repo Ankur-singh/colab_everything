@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "colab_everything"
+  site-url: "https://Ankur-singh.github.io/colab_everything/"
+  description: "Python library to run streamlit, flask, fastapi, etc on google colab."
+  repo-branch: master
+  repo-url: "https://github.com/Ankur-singh/colab_everything/"
