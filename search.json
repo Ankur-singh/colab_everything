@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "colab_everything",
+    "section": "",
+    "text": "pip install colab_everything"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "colab_everything",
+    "section": "Introduction",
+    "text": "Introduction\nWe cannot access the localhost on Google Colab, as we do on our local machine because Google Colab provides a VM(virtual machine). Hence, we will have to expose it to a public URL to access it. We can use ngrok. Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.\nThis library hides away all the complexity and provides you simple interface to run your webapps on colab. The library can be used in the following scenario:\nTo test your web app before deploying it into production. To share the app with peers, friends, and clients; so that they can use/test your app and provide feedbacks."
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "colab_everything",
+    "section": "How to use",
+    "text": "How to use\nNote: The library is only responsible for port tunneling. So, you will have setup everything required to run your web app. For example; installing all the dependecies, setting up all the environment varibles, etc.\n\nStreamlit\n\nfrom colab_everything import ColabStreamlit\nColabStreamlit('app.py') # streamlit app path\n\n\n\nFlask\n\nfrom colab_everything import ColabFlask\nColabFlask('app.py') # Flask app path\n\n\n\nFastAPI\nNote: FastAPI uses uvicorn, so the syntax is a bit different. You will have to pass only the file name (without extention). For example, pass main if your app is main.py.\n\nfrom colab_everything import ColabFastapi\nColabFastapi('app') # FastAPI app file name\n\n\n\nAny other Custom app or command\nYou can use ColabCustom to easily run an other app or command.\nTo be very honest, you will never have to use http.server because colab already provides a file explorer. The example below is just for demonstration purposes.\nNote: The default port is 9999. If you are using any other port then you will have specify it twice; in the command and also in the argument.\n\n## Using default port\nfrom colab_everything import ColabCustom\ncmd = 'python -m http.server 9999'\nColabCustom(cmd)\n\n\n## Using non-default port\nfrom colab_everything import ColabCustom\ncmd = 'python -m http.server 10000'\nColabCustom(cmd, port=10000)\n\nI am actively looking for feedbacks and contributions. Feel free to contact me at as.ankursingh3.1@gmail.com."
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nColabBase\n\n ColabBase (port=9999)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nColabStreamlit\n\n ColabStreamlit (path, port=9999)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nColabFlask\n\n ColabFlask (path, port=9999)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nColabFastapi\n\n ColabFastapi (path, app='app', port=9999)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nColabCustom\n\n ColabCustom (cmd, port=9999)\n\nInitialize self. See help(type(self)) for accurate signature."
+  }
+]
